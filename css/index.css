@@ -146,6 +146,7 @@ figcaption {
 
 .hide{
   visibility: hidden;
+  height: 0;
 }
 
 /*------- Detailed Profile -------------*/
@@ -222,7 +223,9 @@ a{
   color: #000;
 }
 a:hover{
-  color: #ed387c;
+  background-color: #f4f202;
+  color: #000;
+  text-decoration: none;
 }
 
 /*---------- Work -------------------------*/
@@ -412,6 +415,7 @@ ul>li>a:hover{
 }
 
 @media screen and (max-width: 992px){
+
   .navbar{
     margin: 25px 25px 5px 25px;
   }
@@ -504,8 +508,8 @@ ul>li>a:hover{
     margin-right: 10px;
     padding-top: 18px;
     margin-bottom: 50px;
-
   }
+
   .btn-xl {
     padding: 10px 10px;
     background-color: #888;
