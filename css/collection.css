@@ -1,0 +1,285 @@
+@charset "utf-8";
+
+
+/*------collection html------*/
+.collection-poster{
+  background-image: url("img/collection_poster.jpg");
+  min-height: 400px;
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.breadcrumb{
+  float: right;
+  margin: 10px 75px;
+  background-color: #fff;
+}
+
+.title .square{
+  background-color: #ed387c;
+  opacity: 0.2;
+  width: 95px;
+  height: 40px;
+  margin: -60px 0 0 -5px;
+}
+
+.collection-desc .keywords{
+    padding-right: 25px;
+}
+.breadcrumb-item{
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.collection_owner{
+  margin: -75px -75px 75px -75px ;
+  padding: 0;
+  background-color: #ed387c;
+  height: 475px;
+}
+
+.collection_by{
+  padding: 50px;
+  color: #fff;
+}
+
+.sub-profilepic{
+  height: 475px;
+  overflow: hidden;
+}
+
+.discipline>h6{
+  float: left;
+  font-weight: bold;
+
+  color: #ed387c;
+  background-color: #fff;
+  padding: 10px 10px 0 10px;
+  margin: 5px 0 20px 3px;
+}
+
+.work_desc1{
+  padding: 75px 50px 75px 75px;
+  top: 0;
+  left: 0;
+  right: auto;
+}
+
+.work_type>h6{
+  float: left;
+  font-weight: bold;
+
+  color: #fff;
+  background-color: #ed387c;
+  padding: 10px 10px 0 10px;
+  margin: 5px 0 45px 3px;
+}
+
+
+.work_name{
+  text-transform: uppercase;
+}
+.work_blockquote{
+  clear: left;
+  font-size: 25px;
+  line-height: 1.33;
+  margin-top: 15px;
+}
+
+.workpic_1{
+  background-image: url("img/collection_poster.jpg");
+  min-height: 800px;
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.workpic_2{
+  background-image: url("img/workpic_2.jpg");
+  min-height: 700px;
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.sub-name{
+  clear: left;
+}
+
+
+.sub-fullname, .sub-nickname{
+  clear:both;
+  color:#fff;
+  margin: 10px 15px 0 0;
+}
+
+.sub-fullname>h1{
+  font-size: 40px;
+}
+
+.sub-blockquote>h3{
+  font-size: 25px;
+  line-height: 1.33;
+  margin-top: 15px;
+}
+
+.btn-sm {
+  width: auto;
+  height: auto;
+  padding: 15px 15px;
+  border-radius: 25px;
+  font-size: 15px;
+  line-height: 1;
+  border: 0px;
+  background-color: #888;
+  margin-right: 5px;
+}
+.btn-sm:hover{
+  background-color: #ed387c;
+}
+
+.forsales{
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 992px){
+  .collection_owner{
+    margin: -25px -25px 25px -25px ;
+    padding: 0;
+    background-color: #ed387c;
+    height: 350px;
+  }
+
+  .collection_by{
+    padding: 40px;
+    color: #fff;
+  }
+
+  .sub-profilepic{
+    height: 350px;
+    overflow: hidden;
+  }
+
+  .title .square{
+    background-color: #ed387c;
+    opacity: 0.2;
+    width: 65px;
+    height: 28px;
+    margin: -50px 0 0 -5px;
+  }
+
+  .discipline>h6{
+    float: left;
+    font-weight: bold;
+
+    color: #ed387c;
+    background-color: #fff;
+    padding: 5px 5px -3px 5px;
+    margin: 5px 0 10px 3px;
+  }
+
+  .sub-fullname, .sub-nickname{
+    clear:both;
+    color:#fff;
+    margin: 7px 10px 0 0;
+  }
+
+  .sub-fullname>h1{
+    font-size: 30px;
+  }
+
+  .sub-blockquote>h3{
+    font-size: 18px;
+    line-height: 1.33;
+    margin-top: 5px;
+  }
+
+  .sub-contacticon{
+    color: #2b2b2b;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    width: 10%;
+    padding-top: 20px;
+  }
+
+  .breadcrumb{
+    margin: 10px 25px;
+  }
+
+  .breadcrumb-item{
+    font-size: 12px;
+  }
+
+  .collection-desc .keywords{
+      padding-right: 15px;
+  }
+
+}
+@media screen and (max-width: 768px) {
+  .collection_owner{
+    margin: -25px -25px 25px -25px ;
+    padding: 0;
+    background-color: #ed387c;
+    height: 670px;
+  }
+
+  .collection_by{
+    padding: 25px;
+    color: #fff;
+  }
+
+  .sub-profilepic{
+    height: 300px;
+  }
+
+  .title .square{
+    background-color: #ed387c;
+    opacity: 0.2;
+    width: 65px;
+    height: 28px;
+    margin: -50px 0 0 -5px;
+  }
+
+  .discipline>h6{
+    float: left;
+    font-weight: bold;
+
+    color: #ed387c;
+    background-color: #fff;
+    padding: 5px 5px -3px 5px;
+    margin: 5px 0 10px 3px;
+  }
+
+  .sub-fullname, .sub-nickname{
+    clear:both;
+    color:#fff;
+    margin: 7px 10px 0 0;
+  }
+
+  .sub-fullname>h1{
+    font-size: 30px;
+  }
+
+  .sub-blockquote>h3{
+    font-size: 18px;
+    line-height: 1.33;
+    margin-top: 5px;
+  }
+
+  .sub-contacticon{
+    color: #2b2b2b;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    width: 10%;
+    padding-top: 20px;
+  }
+}
