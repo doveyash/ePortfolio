@@ -1,32 +1,8 @@
 @charset "utf-8";
-
-
-/*------collection html------*/
-.collection-poster{
-  background-image: url("img/collection_poster.jpg");
-  min-height: 400px;
-  background-attachment:fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .breadcrumb{
   float: right;
   margin: 10px 75px;
   background-color: #fff;
-}
-
-.title .square{
-  background-color: #ed387c;
-  opacity: 0.2;
-  width: 95px;
-  height: 40px;
-  margin: -60px 0 0 -5px;
-}
-
-.collection-desc .keywords{
-    padding-right: 25px;
 }
 .breadcrumb-item{
   font-family: Arial, sans-serif;
@@ -40,17 +16,14 @@
   background-color: #ed387c;
   height: 475px;
 }
-
 .collection_by{
   padding: 50px;
   color: #fff;
 }
-
 .sub-profilepic{
   height: 475px;
   overflow: hidden;
 }
-
 .discipline>h6{
   float: left;
   font-weight: bold;
@@ -60,6 +33,42 @@
   padding: 10px 10px 0 10px;
   margin: 5px 0 20px 3px;
 }
+.sub-name{
+  clear: left;
+}
+.sub-fullname, .sub-nickname{
+  clear:both;
+  color:#fff;
+  margin: 10px 15px 0 0;
+}
+.sub-fullname>h1{
+  font-size: 40px;
+}
+.sub-blockquote>h3{
+  font-size: 25px;
+  line-height: 1.33;
+  margin-top: 15px;
+}
+
+.collection-poster{
+  background-image: url("img/collection_poster.jpg");
+  min-height: 400px;
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.title .square{
+  background-color: #ed387c;
+  opacity: 0.2;
+  width: 95px;
+  height: 40px;
+  margin: -60px 0 0 -5px;
+}
+.collection-desc .keywords{
+    padding-right: 25px;
+}
+
 
 .work_desc1{
   padding: 75px 50px 75px 75px;
@@ -67,7 +76,6 @@
   left: 0;
   right: auto;
 }
-
 .work_type>h6{
   float: left;
   font-weight: bold;
@@ -77,8 +85,6 @@
   padding: 10px 10px 0 10px;
   margin: 5px 0 45px 3px;
 }
-
-
 .work_name{
   text-transform: uppercase;
 }
@@ -88,7 +94,6 @@
   line-height: 1.33;
   margin-top: 15px;
 }
-
 .workpic_1{
   background-image: url("img/collection_poster.jpg");
   min-height: 800px;
@@ -97,7 +102,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .workpic_2{
   background-image: url("img/workpic_2.jpg");
   min-height: 700px;
@@ -106,27 +110,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
-
-.sub-name{
-  clear: left;
-}
-
-
-.sub-fullname, .sub-nickname{
-  clear:both;
-  color:#fff;
-  margin: 10px 15px 0 0;
-}
-
-.sub-fullname>h1{
-  font-size: 40px;
-}
-
-.sub-blockquote>h3{
-  font-size: 25px;
-  line-height: 1.33;
-  margin-top: 15px;
 }
 
 .btn-sm {
@@ -143,7 +126,6 @@
 .btn-sm:hover{
   background-color: #ed387c;
 }
-
 .forsales{
   margin-top: 20px;
 }
