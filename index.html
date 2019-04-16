@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ePortfolio</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css">
+    <script src="http://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.9/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap@4.0.0/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet">
+    <script>
+    $(function(){
+        $('#unveil').popover({
+            placement: 'top',
+            html:true,
+            content:  $('#myForm').html()
+        }).on('click', function(){
+          $('.btn-secondary').click(function(){
+           $('#result').after("form submitted by " + $('#password').val())
+            $.post('/echo/html/',  {
+                password: $('#password').val(),
+            }, function(r){
+              $('#pops').popover('hide')
+              $('#result').html('resonse from server could be here' )
+            })
+          })
+      })
+    })
+  </script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- image -->
+        <a class="navbar-brand" href="#">
+          <img src="img/small_logo.png" width="100" height="100" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#profile"><h6>Profile</h6> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#collection"><h6>Collection</h6></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#work"><h6>Work</h6></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="profile" class="row">
+        <div class="container profile_sum col-lg-8 col-md-8 col-sm-6">
+          <div class="container profile_heading">
+            <h4>Meet the Designer</h4>
+          </div>
+          <div class="container">
+            <div class="firstname">
+              <h1>Daniel</h1>
+            </div>
+            <div class="lastname">
+              <h1>Cooper</h1>
+              <div class="square"></div>
+            </div>
+          </div>
+          <div class="container subname">
+            <h2>aka. Doveyash, Industrial Designer</h2>
+          </div>
+          <div class="container">
+            <blockquote class="blockquote"><h3><p class="mb-0">
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam ullamcorper lectus tellus, sed rhoncus leo bibendum commodo.
+                Suspendisse volutpat sed.”
+              </p></h3></blockquote>
+          </div>
+          <div class="container contacts">
+            <div class="container contact_icon revealed">
+              <button type="button" class="btn btn-secondary btn-default btn-xl">
+                <i class="k-icon k-i-email k-icon-32"></i>
+              </button>
+            </div>
+            <div class="container contact_icon veiled">
+              <div class="well">
+                <div class="container lock">
+                  <i class="k-icon k-i-lock k-icon-16"></i>
+                </div>
+                <button type="button" id="unveil" class="btn btn-secondary btn-default btn-xl veiled">
+                  <i class="k-icon k-i-linkedin k-icon-32"></i>
+                </button>
+              </div>
+
+              <div id="myForm" class="hide">
+                <form action="/echo/html/" id="popForm" method="get">
+                  <div class=popover_contents>
+                    <label for="password"><h5>Please enter key to unveil</h5></label>
+                    <input type="password" name="password" id="password" class="form-control input-md">
+                    <button type="button" class="btn btn-secondary password-enter" data-loading-text="Sending info.."><em class="icon-ok"></em> Enter </button>
+                  </div>
+                </form>
+              </div>
+              <div id="result" class="hide">
+
+              </div>
+            </div>
+            <div class="container contact_icon revealed">
+              <button type="button" class="btn btn-secondary btn-xl">
+                <i class="k-icon k-i-behance k-icon-32"></i>
+              </button>
+            </div>
+            <div class="container contact_icon revealed">
+              <button type="button" class="btn btn-secondary btn-xl">
+                <i class="k-icon k-i-youtube k-icon-32"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <figure class="container figure col-lg-4 col-md-4 col-sm-6">
+          <img src="img/cooper.jpg" alt="Profile Picture">
+          <figcaption class="figure-caption">Profile Picture</figcaption>
+        </figure>
+      </section>
+      <section class="profile_detail">
+        <div class="divider"><img src="img/divider.png" alt="divider"></div>
+        <div class="row">
+          <div class="container profile_detail1 col-lg-4 col-md-12 col-sm-12">
+            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ex ac massa pulvinar congue. In mattis libero dui, vel faucibus purus commodo eget. Suspendisse facilisis mi sit amet dui dictum, sit amet tincidunt magna ultricies. Cras sem nulla, convallis ac dictum sed, accumsan eu neque. Praesent consequat mi sed lacus vulputate, nec maximus urna lobortis. Suspendisse potenti. Quisque id mi non elit dictum semper. Nullam eu tincidunt ipsum, in rhoncus augue. Quisque nec enim et nullam.</h5>
+          </div>
+          <div class="row col-lg-8 col-md-12 col-sm-12">
+            <div class="row col-lg-12 col-md-12 col-sm-12">
+              <div class="container profile_detail2 col-lg-6 col-md-6 col-sm-12">
+                <i class="fas profile_icon fa-graduation-cap fa-lg"></i>
+                <div class="education">
+                  <h5><strong>School Name</strong></h5>
+                  <h5>Degree Detail</h5>
+                  <h5>Program detail, Year </h5>
+                </div>
+                <div class="education">
+                  <h5><strong>School Name</strong></h5>
+                  <h5>Degree Detail</h5>
+                  <h5>Program detail, Year </h5>
+                </div>
+              </div>
+              <div class="container profile_detail2 col-lg-6 col-md-6 col-sm-12">
+                <i class="fas profile_icon fa-hand-paper fa-lg"></i>
+                <div class="competency">
+                  <p class="keywords">
+                    <span class="keyword">Keyword #1</span>
+                    <span class="keyword">Keyword #2</span>
+                    <span class="keyword">Keyword #3</span>
+                    <span class="keyword">Keyword #4</span>
+                    <span class="keyword">Keyword #5</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row col-lg-12 col-md-12 col-sm-12">
+              <div class="container profile_detail3 col-lg-6 col-md-6 col-sm-12">
+                <i class="fas profile_icon fa-palette fa-lg"></i>
+                <div class="exhibition">
+                  <h5><strong>2019, Exhibition Name </strong><a href="#"><i class="exhb_website fas fa-globe"></i></a></h5>
+                  <h5>City, Province, Country</h5>
+                </div>
+                <div class="exhibition">
+                  <h5><strong>2019, Exhibition Name </strong><a href="#"><i class="exhb_website fas fa-globe"></i></a></h5>
+                  <h5>City, Province, Country</h5>
+                </div>
+                <div class="exhibition">
+                  <h5><strong>2019, Exhibition Name </strong><a href="#"><i class="exhb_website fas fa-globe"></i></a></h5>
+                  <h5>City, Province, Country</h5>
+                </div>
+              </div>
+              <div class="container profile_detail3 col-lg-6 col-md-6 col-sm-12">
+                <i class="fas profile_icon fa-award fa-lg"></i>
+                <div class="award">
+                  <h5><strong>2019, Award Name </strong></h5>
+                  <h5>Organization</h5>
+                </div>
+                <div class="award">
+                  <h5><strong>2019, Award Name </strong></h5>
+                  <h5>Organization</h5>
+                </div>
+                <div class="award">
+                  <h5><strong>2019, Award Name </strong></h5>
+                  <h5>Organization</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="collection">
+        <div class="divider"><img src="img/divider.png" alt="divider"></div>
+        <div class="row">
+          <div id="myCarousel" class="carousel slide collection" data-ride="carousel">
+            <div class="container col-lg-1 col-md-1 col-sm-1 collection-go-back">
+              <a class="btn btn-outline-secondary btn-lg mx-1 next" href="javascript:void(0)" title="Next">
+                <i class="k-icon k-i-arrow-chevron-left k-icon-32"></i>
+              </a>
+            </div>
+            <div class="container carousel-inner col-lg-10 col-md-10 col-sm-10">
+              <div class="row mx-auto">
+                <div class="carousel-item col-lg-4 col-md-6 col-sm-12 active">
+                  <div class="card">
+                    <div class="card-body">
+                      <figure>
+                        <img src="img/designer_work_1.png" class="figure-img img-fluid" alt="" height="150px">
+                        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                      </figure>
+                      <p class="card-text">
+                        <h4 class="card_category">Design Collection</h4>
+                      </p>
+                      <a href="collection.html"><h2>Collection Name 1</h2></a>
+                      <p class="card-text"><h5>This is a longer card with supporting text below as a natural lead-in to additional content. This content is
+                        a little bit longer.</h5></p>
+                      <p class="keywords">
+                        <span class="keyword">Keyword #1</span>
+                        <span class="keyword">Keyword #2</span>
+                        <span class="keyword">Long Keyword #3</span>
+                        <span class="keyword">Keyword #4</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item col-lg-4 col-md-6 col-sm-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <figure>
+                        <img src="img/designer_work_1.png" class="figure-img img-fluid" alt="" height="150px">
+                        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                      </figure>
+                      <p class="card-text">
+                        <h4 class="card_category">Design Collection</h4>
+                      </p>
+                      <a href="collection.html"><h2>Collection Name 2</h2></a>
+                      <p class="card-text"><h5>This is a longer card with supporting text below as a natural lead-in to additional content. This content is
+                        a little bit longer.</h5></p>
+                      <p class="keywords">
+                        <span class="keyword">Keyword #1</span>
+                        <span class="keyword">Keyword #2</span>
+                        <span class="keyword">Long Keyword #3</span>
+                        <span class="keyword">Keyword #4</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item col-lg-4 col-md-6 col-sm-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <figure>
+                        <img src="img/designer_work_1.png" class="figure-img img-fluid" alt="" height="150px">
+                        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                      </figure>
+                      <p class="card-text">
+                        <h4 class="card_category">Design Collection</h4>
+                      </p>
+                      <a href="collection.html"><h2>Collection Name 3</h2></a>
+                      <p class="card-text"><h5>This is a longer card with supporting text below as a natural lead-in to additional content. This content is
+                        a little bit longer.</h5></p>
+                      <p class="keywords">
+                        <span class="keyword">Keyword #1</span>
+                        <span class="keyword">Keyword #2</span>
+                        <span class="keyword">Long Keyword #3</span>
+                        <span class="keyword">Keyword #4</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item col-lg-4 col-md-6 col-sm-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <figure>
+                        <img src="img/designer_work_1.png" class="figure-img img-fluid" alt="" height="150px">
+                        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                      </figure>
+                      <p class="card-text">
+                        <h4 class="card_category">Design Collection</h4>
+                      </p>
+                      <a href="collection.html"><h2>Collection Name 4</h2></a>
+                      <p class="card-text"><h5>This is a longer card with supporting text below as a natural lead-in to additional content. This content is
+                        a little bit longer.</h5></p>
+                      <p class="keywords">
+                        <span class="keyword">Keyword #1</span>
+                        <span class="keyword">Keyword #2</span>
+                        <span class="keyword">Long Keyword #3</span>
+                        <span class="keyword">Keyword #4</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item col-lg-4 col-md-6 col-sm-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <figure>
+                        <img src="img/designer_work_1.png" class="figure-img img-fluid" alt="" height="150px">
+                        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                      </figure>
+                      <p class="card-text">
+                        <h4 class="card_category">Design Collection</h4>
+                      </p>
+                      <a href="collection.html"><h2>Collection Name 5</h2></a>
+                      <p class="card-text"><h5>This is a longer card with supporting text below as a natural lead-in to additional content. This content is
+                        a little bit longer.</h5></p>
+                      <p class="keywords">
+                        <span class="keyword">Keyword #1</span>
+                        <span class="keyword">Keyword #2</span>
+                        <span class="keyword">Long Keyword #3</span>
+                        <span class="keyword">Keyword #4</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container col-lg-1 col-md-1 col-sm-1 collection-more">
+              <a class="btn btn-outline-secondary mx-1 next" href="javascript:void(0)" title="Next">
+                <i class="k-icon k-i-arrow-chevron-right k-icon-32"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="work">
+        <div class="divider"><img src="img/divider.png" alt="divider"></div>
+        <div class="row work">
+          <div class="container work_thumbnail col-lg-4 col-md-6 col-sm-12">
+            <a href="work.html">
+              <img src="img/designer_work_1.png" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="work_text">
+                  <h2>Work Name</h2>
+                  <h5>Type of Work</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="container work_thumbnail col-lg-4 col-md-6 col-sm-12">
+            <a href="work.html"></a>
+              <img src="img/designer_work_1.png" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="work_text">
+                  <h2>Work Name</h2>
+                  <h5>Type of Work</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="container work_thumbnail col-lg-4 col-md-6 col-sm-12">
+            <a href="work.html">
+            <img src="img/designer_work_1.png" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="work_text">
+                  <h2>Work Name</h2>
+                  <h5>Type of Work</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="container work_thumbnail col-lg-4 col-md-6 col-sm-12">
+            <a href="work.html">
+              <img src="img/designer_work_1.png" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="work_text">
+                  <h2>Work Name</h2>
+                  <h5>Type of Work</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="container work_thumbnail col-lg-4 col-md-6 col-sm-12">
+            <a href="work.html">
+              <img src="img/designer_work_1.png" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="work_text">
+                  <h2>Work Name</h2>
+                  <h5>Type of Work</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="container work_thumbnail col-lg-4 col-md-6 col-sm-12">
+            <a href="work.html">
+              <img src="img/designer_work_1.png" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="work_text">
+                  <h2>Work Name</h2>
+                  <h5>Type of Work</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        <div class="container loadmore col-lg-12 col-md-12 col-sm-12">
+          <button class="loadbutton" type="button"><h6>Load More</h6></button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="row">
+        <div class="container col-lg-6 col-md-6 col-sm-12">
+          <ul class="footer-nav">
+            <li class="footer-item active">
+              <a class="footer-link" href="#profile"><h5>Profile</h5></a>
+            </li>
+            <li class="footer-item">
+              <a class="footer-link" href="#collection"><h5>Collection</h5></a>
+            </li>
+            <li class="footer-item">
+              <a class="footer-link" href="#work"><h5>Work</h5></a>
+            </li>
+          </ul>
+        </div>
+        <div class="container copyright col-lg-6 col-md-6 col-sm-12">
+            <h6>© OCAD U 2019</h6>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
