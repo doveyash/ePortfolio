@@ -24,7 +24,7 @@
             content:  $('#myForm').html()
         }).on('click', function(){
           $('.btn-secondary').click(function(){
-           $('#result').after("form submitted by " + $('#password').val())
+           $('#result').after($('#password').val())
             $.post('/echo/html/',  {
                 password: $('#password').val(),
             }, function(r){
