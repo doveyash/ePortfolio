@@ -280,10 +280,6 @@ button>h6{
 }
 
 /*----------footer-------------------------*/
-footer{
-  padding: 75px;
-  background-color: #000;
-}
 ul{
   list-style-type: none;
   padding: 0;
@@ -303,6 +299,10 @@ ul>li>a:hover{
 .copyright{
   text-align: right;
   color: #fff;
+}
+.footer{
+  background-color: #000;
+  padding: 75px;
 }
 
 /*----------Collection page-------------------------*/
@@ -364,7 +364,8 @@ ul>li>a:hover{
 }
 
 .collection_owner{
-  margin: -75px -75px 75px -75px ;
+  clear: both;
+  margin: 0;
   padding: 0;
   background-color: #ed387c;
   height: 475px;
@@ -416,6 +417,82 @@ ul>li>a:hover{
 .design_thumbnail:hover .middle {
   opacity: 1;
 }
+
+/*----------- Work detail page ---------------------*/
+.work_breadcrumb .breadcrumb{
+  margin: -25px 0 0 0;
+  padding: 0;
+  background: none;
+}
+
+.work_desc{
+  padding: 75px 25px 75px 75px;
+}
+.work_desc_detail{
+  padding-top: 25px;
+}
+
+.work_pic{
+  background-image: url("img/collection_poster.jpg");
+  position: relative;
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.work_type>h6{
+  float: left;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ed387c;
+  padding: 10px 10px 0 10px;
+  margin: 5px 0 25px 3px;
+}
+
+.work_link{
+  float: left;
+  width: 10%;
+  display: inline-block;
+  text-align: center;
+  margin-right: 15px;
+  padding-top: 25px;
+}
+.work_link .btn-xl {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  line-height: 1;
+  border: 0px;
+  background-color: #888;
+}
+.btn-xl:hover{
+  background-color: #999;
+}
+
+.work_icon{
+  margin-right: 15px;
+  margin-top: -5px;
+}
+
+.work_icon_desc{
+  margin-top: 15px;
+}
+
+.work_blockquote{
+  clear: both;
+  padding: 25px 0;
+}
+
+.work_pic_extra{
+  float: right;
+}
+
+.work_name{
+  clear: both;
+}
+
 
 /*----------- media query ---------------------*/
 @media screen and (min-width: 768px) {
@@ -530,7 +607,6 @@ ul>li>a:hover{
 }
 
 @media screen and (max-width: 992px){
-
   .navbar{
     margin: 25px 25px 5px 25px;
   }
@@ -597,11 +673,6 @@ ul>li>a:hover{
   .divider{
     padding: 25px 0 50px 0;
     width: 50%;
-  }
-
-  footer{
-    padding: 25px;
-    background-color: #000;
   }
 
   .profile_sum{
@@ -677,8 +748,8 @@ ul>li>a:hover{
     line-height: 28px;
   }
   .collection_owner{
-    margin: -25px -25px 25px -25px ;
-    padding: 0;
+    margin: 0;
+    padding: 0px;
     background-color: #ed387c;
     height: 350px;
   }
@@ -741,7 +812,7 @@ ul>li>a:hover{
   }
 
   .breadcrumb-item{
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .collection-desc .keywords{
@@ -757,7 +828,14 @@ ul>li>a:hover{
   .btn-xl {
     padding: 10px;
   }
+  .work_desc{
+    padding: 25px;
+  }
 
+
+  .footer{
+    padding: 25px;
+  }
 }
 @media screen and (max-width: 768px) {
   .profile_sum{
@@ -788,10 +866,10 @@ ul>li>a:hover{
   }
 
   .collection_owner{
-    margin: -25px -25px 25px -25px ;
+    margin: 75px 0 0 0;
     padding: 0;
     background-color: #ed387c;
-    height: 670px;
+    height: 600px;
   }
 
   .collection_by{
@@ -845,4 +923,9 @@ ul>li>a:hover{
     width: 10%;
     padding-top: 20px;
   }
+
+  .work_pic{
+    height: 350px;
+  }
+
 }
